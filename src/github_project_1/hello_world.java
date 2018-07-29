@@ -17,6 +17,7 @@ public class hello_world {
 		System.out.println("hello world!!!");
 		System.out.println("test");
 		//test
+		//test_2
 	}
 
 }
