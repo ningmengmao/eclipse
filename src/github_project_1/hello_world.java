@@ -16,7 +16,7 @@ public class hello_world {
 		// TODO 自动生成的方法存根
 		System.out.println("hello world!!!");
 		System.out.println("test");
-		
+		//test
 	}
 
 }
