@@ -8,35 +8,35 @@ package github_project_1;
  *
  */
 
-class Box {
-
-	double width;
-	double height;
-	double depth;
-	
-	Box(){
-		System.out.println("Constructing Box");
-		this.width = 10;
-		this.height = 10;
-		this.depth = 10;
-	}
-	
-	Box(double w, double h, double d){
-		this.width = w;
-		this.height = h;
-		this.depth = d;
-	}
-	
-	void volume() {
-		System.out.print("Volume is ");
-		System.out.println(this.width*this.height*this.depth);
-	}
-	
-	protected void finalize() {
-		// 垃圾回收,对象销毁前执行,如释放句柄或文件描述符
-		//System.out.println("running finalize");
-	}
-}
+//class Box {
+//
+//	double width;
+//	double height;
+//	double depth;
+//	
+//	Box(){
+//		System.out.println("Constructing Box");
+//		this.width = 10;
+//		this.height = 10;
+//		this.depth = 10;
+//	}
+//	
+//	Box(double w, double h, double d){
+//		this.width = w;
+//		this.height = h;
+//		this.depth = d;
+//	}
+//	
+//	void volume() {
+//		System.out.print("Volume is ");
+//		System.out.println(this.width*this.height*this.depth);
+//	}
+//	
+//	protected void finalize() {
+//		// 垃圾回收,对象销毁前执行,如释放句柄或文件描述符
+//		//System.out.println("running finalize");
+//	}
+//}
 
 
 

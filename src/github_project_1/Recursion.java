@@ -1,3 +1,6 @@
+/**
+ *	递归
+ */
 package github_project_1;
 
 class Factorial{
