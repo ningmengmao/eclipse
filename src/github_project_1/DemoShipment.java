@@ -1,6 +1,6 @@
 package github_project_1;
 
-class Box{
+class Box {
 	private double width;
 	private double height;
 	private double depth;
