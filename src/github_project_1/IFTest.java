@@ -1,3 +1,7 @@
+/*
+ *  实现接口
+ *  调用接口
+ */
 package github_project_1;
 
 class FixedStack implements IntStack {

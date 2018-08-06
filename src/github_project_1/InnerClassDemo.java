@@ -1,3 +1,6 @@
+/*
+ *  嵌套类
+ */
 package github_project_1;
 
 class Outer {

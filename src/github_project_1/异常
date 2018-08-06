@@ -1,0 +1,20 @@
+try {
+    // 可能发生异常的程序语句
+}
+catch (ExceptionType1 exOb) {
+    // 错误类型1处理语句
+}
+catch (ExceptionType2 exOb) {
+    // 错误类型2处理语句
+}
+finally {
+    // try语句结束后必须执行的代码
+}
+                     异常层次
+                    Throwable
+                 |              |
+             Exception        Error (灾难性的失败)
+      (用户程序应当捕获的异常或自定义异常)           
+                 |              
+          RuntimeException
+ （自动定义的异常 such as 除零，无效数组索引）
