@@ -21,7 +21,8 @@ public class Exc0 {
 		}
 		catch (ArithmeticException e) {
 			System.out.println("Division by zero.");
+			a = 0;
 		}
-		System.out.println("after catch statement");
+		System.out.println("after catch statement, a = "+a);
 	}
 }
