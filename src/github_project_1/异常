@@ -18,3 +18,25 @@ finally {
                  |              
           RuntimeException
  （自动定义的异常 such as 除零，无效数组索引）
+ 
+ 多条catch语句是，异常的子类一定要放在superclass之前
+ catch (RuntimeException e){
+    // body of catch
+ }
+ catch (Exception e) {               //如果颠倒两个catch，则RuntimeException会被 Exception
+    // ...                           //导致到不了catch(RuntimeException)，编译报错
+}
+ 
+ throw ThrowableInstance 手动抛出异常
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

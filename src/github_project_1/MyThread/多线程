@@ -1,0 +1,19 @@
+线程切换: 自愿地放弃控制; 被优先级高的线程取代
+windows 相同等级的线程以循环方式自动获得CPU资源
+其他操作系统的 线程 需要其他 相同等级的线程 自愿 的放弃控制权
+
+Thread类 Runnable接口
+Thread方法  getName() | getPriority() 线程优先级 | isAlive() 线程是否在运行 | join() 等待线程终止
+            run() 线程入口 | sleep() 挂起一段时间 | start() 调用run()启动线程 |
+
+static Thread currentThread() //返回对调用他的线程的引用
+static void sleep(long 毫秒) throws InterruptedException
+final void setName(String ThreadName)  // final修饰方法不允许重写 
+final String getName()  
+
+创建线程的方法 -- 实现Runnable接口 | 扩展Thread类          
+
+            
+            
+            
+            

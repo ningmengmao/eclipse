@@ -21,7 +21,7 @@ public class AccessTest {
 		Test ob = new Test();
 		ob.a = 10;
 		ob.b = 20;
-	//	ob.c = 100;
+//		ob.c = 100;
 		ob.setc(100);
 		System.out.println(ob.getc());
 	}

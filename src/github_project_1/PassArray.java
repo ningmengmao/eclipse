@@ -43,6 +43,6 @@ public class PassArray {
 	
 		vaTest("first, ", 10);
 		vaTest("second, ",1,2,3);
-	//	vaTest("thrid, "); vaTest(String ... v) 和 vaTest(String msg, int ... v) 模糊，报错。必须使用不同的方法名
+	//	vaTest("third, "); vaTest(String ... v) 和 vaTest(String msg, int ... v) 模糊，报错。必须使用不同的方法名
 	}
 }

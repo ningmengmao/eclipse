@@ -80,7 +80,7 @@ public class DemoShipment {
 	               new Shipment(10, 20, 15, 10, 3.41);
 	    Shipment shipment2 =
 	               new Shipment(2, 3, 4, 0.76, 1.28);
-
+//	    Box b = new Box(shipment1);
 	    double vol;
 
 	    vol = shipment1.volume();
