@@ -1,4 +1,4 @@
-package github_project_1.CodeJava;
+package github_project_1.Jcode;
 import java.util.ArrayList;
 
 public class ArrayListTest {
