@@ -1,0 +1,68 @@
+String
+int compareTo(String other)
+按照字典顺序, 如果字符串位于other之前, 返回一个负数;如果字符串位于other之后, 返回一个正数 ; 
+如果两个字符串相等, 返回 0 。
+boolean startsWith ( String prefix)
+boolean endsWith ( String suffix)
+如果字符串以 suffix 开头或结尾,则返回 true 。
+String toLowerCase()
+String toUpperCase()
+
+ArrayList
+void set( int index , E obj)
+设置数组列表指定位置的元素值 , 这个操作将覆盖这个位置的原有内容 。
+E get(int index)
+获得指定位置的元素值 。
+获得的元素位置 (必须介于 0 ~ size() - 1 之间)
+void add(int index , E obj )
+向后移动元素 , 以便插入元素 。
+E removed (int index)
+删除一个元素, 并将后面的元素向前移动.被删除的元素由返回值返回 。
+
+可变参数 ... 用for each读取
+
+enum 类
+static Enum valueOf(Class enumClass, String name)
+返回指定名字 、 给定类的枚举常量 。
+int ordinal() 
+返回枚举常量在enum中的位置,首位从0开始
+
+反射
+java.lang.reflect包内有Field类的域,Method方法,Constructor构造函数三个类
+获取对应的Class对象
+通过Class对象调用getDeclaredFields()
+调用getDeclareMethods()获得Method对象|调用Class类中的getMethod方法
+
+Class 类
+Field[] getFields()
+Field[] getDeclaredFields()
+getFields 方法将返回一个包含 Field 对象的数组 , 这些对象记录了这个类或其超类的公有域 。 
+getDeclaredField 方法也将返回包含 Field 对象的数组 , 这些对象记录了这个类的全部域 。 
+如果类中没有域,或者 Class 对象描述的是基本类型或数组类型,这些方法将返回一个长度为 0 的数组 。
+Method [] getMethods()
+Method[] getDeclareMethods()
+返回包含 Method 对象的数组 : getMethods 将返回所有的公有方法 , 包括从超类继承来的公有方法 ; 
+getDeclaredMethods 返回这个类或接口的全部方法 , 但不包括由超类继承了的方法 。
+Constructor[] getConstructors()
+Constructor[] getDeclaredConstructors()
+返回包含Constructor对象的数组,其中包含了Class对象所描述的类的所有公有构造器(getConstructors) 
+或所有构造器(getDeclaredConstructors) 。
+
+Constructor类 构造函数
+Class getDeclaringClass ( )
+返冋一个用于描述类中定义的构造器 、 方法或域的 Class 对象 。
+Class[] getExceptionTypes ( ) ( 在 Constructor 和 Method 类 中 )
+返回一个用于描述方法抛出的异常类型的 Class 对象数组 。
+int getModifiers ( )
+返回一个用于描述构造器 、 方法或域的修饰符的整型数值 。 使用 Modifier 类中的这个
+方法可以分析这个返回值 。
+String getName ( )
+返冋一个用于描述构造器、 方法或域名的字符串 。
+Class[] getParameterTypes ( ) ( 在 Constructor 和 Method 类 中 )
+返回一个用于描述参数类型的 Class 对象数组 。
+Class getReturnType ( ) ( 在 Method 类 中 )
+返回一个用于描述返 H 类型的 Class 对象 。
+
+Modifier 
+static String toString(int modifiers)
+返回对应modifiers中位设置的修饰符的字符串表示.

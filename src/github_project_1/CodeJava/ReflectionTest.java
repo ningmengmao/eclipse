@@ -1,4 +1,4 @@
-package github_project_1.Jcode;
+package github_project_1.CodeJava;
 import java.lang.reflect.*;
 import java.util.Scanner;
 /**
@@ -83,6 +83,7 @@ public class ReflectionTest {
 		try {
 			Class cl = Class.forName(name);
 			Class supercl = cl.getSuperclass();
+			// 获取修饰符
 			String modifiers = Modifier.toString(cl.getModifiers());
 			if(modifiers.length() > 0)
 				System.out.print(modifiers + " ");

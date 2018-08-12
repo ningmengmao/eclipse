@@ -1,4 +1,4 @@
-package github_project_1.Jcode;
+package github_project_1.CodeJava;
 
 import java.time.LocalDate;
 
