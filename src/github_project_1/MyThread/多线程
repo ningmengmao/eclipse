@@ -20,8 +20,4 @@ final void notify()
 final void notifyAll()
 
 监视器与对象关联
-            
-            
-     
-            
-            
+      
