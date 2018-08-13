@@ -1,4 +1,4 @@
-package github_project_1.CodeJava;
+package mypackage.CodeJava;
 import java.lang.reflect.*;
 import java.util.Scanner;
 /**

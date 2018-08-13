@@ -2,7 +2,7 @@
  * 竞态
  * 同步语句
  */
-package github_project_1.MyThread;
+package mypackage.MyThread;
 class Callme {
 //	void call(String msg) {   竞态的
 	synchronized void call(String msg) {   // 同步的

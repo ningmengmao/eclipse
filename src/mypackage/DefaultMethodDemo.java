@@ -1,7 +1,7 @@
 /*
  * 带默认方法的接口
  */
-package github_project_1;
+package mypackage;
 import java.util.Random;
 
 class MyIFImp implements MyIF {

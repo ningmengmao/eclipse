@@ -2,7 +2,7 @@
  * 建立线程
  * 如果不重写Thread类的方法(run除外),推荐使用Runnable接口创建线程
  */
-package github_project_1.MyThread;
+package mypackage.MyThread;
 
 class NewThread implements Runnable {		// 实现Runnalbe接口方法建立线程
 	Thread t;

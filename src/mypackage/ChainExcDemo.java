@@ -2,7 +2,7 @@
  *  链式异常处理
  *  多重捕获
  */
-package github_project_1;
+package mypackage;
 
 public class ChainExcDemo {
 	static void demoproc() {		// 链式异常处理

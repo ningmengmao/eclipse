@@ -1,4 +1,4 @@
-package github_project_1;
+package mypackage;
 
 class Stack {
 	private int stck[] = new int[10];

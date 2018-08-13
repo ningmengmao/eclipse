@@ -3,7 +3,7 @@
  * 动态方法调度
  * 抽象类
  */
-package github_project_1;
+package mypackage;
 
 abstract class Figuer {		//抽象类
 	double dim1;

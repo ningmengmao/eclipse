@@ -1,7 +1,7 @@
 /*
  * 枚举
  */
-package github_project_1.Enum;
+package mypackage.Enum;
 
 enum Apple {
 	Jonathan, GoldenDel, RedDel, Winesap, Cortland

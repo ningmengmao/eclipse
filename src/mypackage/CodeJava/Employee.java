@@ -1,16 +1,16 @@
-package github_project_1.CodeJava;
+package mypackage.CodeJava;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
-import java.time.LocalDate;
-
-public class Employee {
+public class Employee implements Comparable<Employee> ,Cloneable  {
 	private String name;
 	private double salary;
-	private LocalDate hireDay;
+	private Date hireDay;
 	
-	public Employee(String aName, double aSalary, int year, int month, int day) {
+	public Employee(String aName, double aSalary) {
 		name = aName;
 		salary = aSalary;
-		hireDay = LocalDate.of(year, month, day);
+		hireDay = new Date();
 	}
 	public String getName() {
 		return name;
@@ -18,9 +18,14 @@ public class Employee {
 	public double getSalary() {
 		return salary;
 	}
-	public LocalDate getHireDay() {
+	public void setHireDay(int year, int month, int day) {
+		Date newHireDay = new GregorianCalendar(year, month-1, day).getTime();
+		hireDay.setTime(newHireDay.getTime());
+	}
+	public Date getHireDay() {
 		return hireDay;
 	}
+	
 	public void raiseSalary(double byPercent) {
 		this.salary += this.salary * byPercent / 100;
 	}
@@ -28,6 +33,25 @@ public class Employee {
 	public String toString() {
 		return getClass().getName()+" [name="+ name
 				+ " nsalary=" + salary + " hireDay=" + hireDay + "]";
+	}
+	/**
+	 * Compares employee by salary
+	 * @param other another Employee object
+	 */
+	@Override
+	public int compareTo(Employee other) {
+		return Double.compare(this.salary, other.salary);
+	}
+//  浅拷贝	
+//	@Override
+//	public Employee clone() throws CloneNotSupportedException {
+//		return (Employee) super.clone();
+//	}
+	@Override
+	public Employee clone() throws CloneNotSupportedException {
+		Employee cloned = (Employee) super.clone();
+		cloned.hireDay = (Date) hireDay.clone();
+		return cloned;
 	}
 	
 }

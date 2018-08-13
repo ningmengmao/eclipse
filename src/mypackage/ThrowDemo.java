@@ -1,7 +1,7 @@
 /*
  * 	创建标准异常对象,抛出错误
  */
-package github_project_1;
+package mypackage;
 
 public class ThrowDemo {
 	static void demoproc() {

@@ -1,7 +1,7 @@
 /*
  * 线程间通信
  */
-package github_project_1.MyThread;
+package mypackage.MyThread;
 
 class Q {
 	private int n;

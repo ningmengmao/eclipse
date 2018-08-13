@@ -2,7 +2,7 @@
  * 装箱 拆箱
  * 自动装箱 自动拆箱
  */
-package github_project_1.Enum;
+package mypackage.Enum;
 
 public class Wrap {
 

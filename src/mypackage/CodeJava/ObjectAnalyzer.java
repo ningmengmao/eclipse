@@ -1,4 +1,4 @@
-package github_project_1.CodeJava;
+package mypackage.CodeJava;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;

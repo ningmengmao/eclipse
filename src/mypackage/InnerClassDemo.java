@@ -1,7 +1,7 @@
 /*
  *  嵌套类
  */
-package github_project_1;
+package mypackage;
 
 class Outer {
 	int out_x = 100;

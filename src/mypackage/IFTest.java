@@ -2,7 +2,7 @@
  *  实现接口
  *  调用接口
  */
-package github_project_1;
+package mypackage;
 
 class FixedStack implements IntStack {
 	private int stck[];

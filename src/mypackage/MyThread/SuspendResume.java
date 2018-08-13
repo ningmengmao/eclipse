@@ -1,7 +1,7 @@
 /*
  * 线程挂起和重启
  */
-package github_project_1.MyThread;
+package mypackage.MyThread;
 
 class NewThread1 implements Runnable {
 	private String name;

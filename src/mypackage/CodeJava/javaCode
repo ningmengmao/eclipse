@@ -66,3 +66,18 @@ Class getReturnType ( ) ( 在 Method 类 中 )
 Modifier 
 static String toString(int modifiers)
 返回对应modifiers中位设置的修饰符的字符串表示.
+
+java.lang.Comparable<T>  接口
+int compareTo(T other)
+用这个对象与 other 进行比较 。 如果这个对象小于 other 则返回负值 ; 如果相等则返回
+0 ; 否则返回正值 。
+
+java.util.Arrays
+static void sort(Object[] a)
+使用 mergesort 算法对数组 a 中的元素进行排序 。 要求数组中的元素必须属于实现了
+Comparable 接口的类, 并且元素之间必须是可比较的 。
+
+Integer和Double
+static int comparednt x , int y ) 
+如果 x < y 返回一个负整数 ; 如果 x 和 y 相等, 则返回 0 ; 否则返回一个负整数 。
+

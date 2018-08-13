@@ -1,4 +1,4 @@
-package github_project_1;
+package mypackage;
 
 //public class Exc0 {
 //

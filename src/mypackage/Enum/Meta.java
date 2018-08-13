@@ -1,7 +1,7 @@
 /*
  * 注解
  */
-package github_project_1.Enum;
+package mypackage.Enum;
 import java.lang.annotation.*;
 import java.lang.reflect.*;
 

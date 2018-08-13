@@ -1,7 +1,7 @@
 /**
  * 
  */
-package github_project_1;
+package mypackage;
 
 /**
  * @author ningmengmao

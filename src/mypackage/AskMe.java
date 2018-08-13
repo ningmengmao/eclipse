@@ -1,7 +1,7 @@
 /*
  *  接口内定义常量
  */
-package github_project_1;
+package mypackage;
 import java.util.Random;
 
 class Question implements SharedConstants {

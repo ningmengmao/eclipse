@@ -1,7 +1,7 @@
 /*
  *  finally 语句的使用
  */
-package github_project_1;
+package mypackage;
 
 public class FinallyDemo {
 	static void procA() {

@@ -1,7 +1,7 @@
 /*
  *  自定义exception
  */
-package github_project_1;
+package mypackage;
 
 class MyException extends Exception {
 	private int detail ;

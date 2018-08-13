@@ -1,7 +1,7 @@
 /**
  *	递归
  */
-package github_project_1;
+package mypackage;
 
 class Factorial{
 	long fact(int n) {

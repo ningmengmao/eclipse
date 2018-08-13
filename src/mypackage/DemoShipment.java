@@ -1,7 +1,7 @@
 /*
  *  重载
  */
-package github_project_1;
+package mypackage;
 
 class Box {
 	private double width;

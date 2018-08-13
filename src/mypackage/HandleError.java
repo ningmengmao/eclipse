@@ -1,4 +1,4 @@
-package github_project_1;
+package mypackage;
 import java.util.Random ;
 
 public class HandleError {

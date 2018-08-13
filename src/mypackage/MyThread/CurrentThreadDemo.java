@@ -1,4 +1,4 @@
-package github_project_1.MyThread;
+package mypackage.MyThread;
 
 public class CurrentThreadDemo {
 

@@ -2,7 +2,7 @@
  *  静态方法，不需要类的对象就直接调用
  *  可变长度参数
  */
-package github_project_1;
+package mypackage;
 
 public class PassArray {
 	static void vaTest(String msg, int ... v) {	 

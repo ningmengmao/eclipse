@@ -1,4 +1,4 @@
-package github_project_1.Enum;
+package mypackage.Enum;
 
 enum Apple1 {
 	Jonathan(10), GoldenDel(9), RedDel, Winesap(15), Cortland(8);
