@@ -1,0 +1,3 @@
+public <T> func(T t) { do something }
+public <T> List list() { do something }
+public <K,V> Map<K,V> map(){ do something }
