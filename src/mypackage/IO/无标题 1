@@ -1,0 +1,12 @@
+File 
+File(File parent, String child) 从父目录实例 和子目录/文件名字符串创建新的 File实例。
+File(String pathname) 通过将给定的路径名字符串转换为抽象路径名来创建新的 File实例。
+File(String parent, String child) 从父路径名字符串和子路径名字符串创建新的 File实例。
+public boolean createNewFile() throws IOException // 不存在就创建文件,返回true; 存在则返回false
+public boolean mkdir(a) 创建由此抽象路径名命名的目录
+public boolean mkdirs("a/b/c") 创建由此抽象路径名命名的多级目录
+public boolean renameTo(File dest) 重命名由此抽象路径名表示的文件输出到dest。(源文件移除)
+public boolean delete() 删除由此抽象路径名表示的文件或目录。目录必须为空才能删除。
+
+
+
