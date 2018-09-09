@@ -7,6 +7,10 @@ public boolean mkdir(a) 创建由此抽象路径名命名的目录
 public boolean mkdirs("a/b/c") 创建由此抽象路径名命名的多级目录
 public boolean renameTo(File dest) 重命名由此抽象路径名表示的文件输出到dest。(源文件移除)
 public boolean delete() 删除由此抽象路径名表示的文件或目录。目录必须为空才能删除。
+public String[] list(FilenameFilter filter) 根据filter过滤文件和目录(自己实现filter)
 
-
+public abstract class InputStream
+extends Object
+implements Closeable
+这个抽象类是表示输入字节流的所有类的超类。
 
