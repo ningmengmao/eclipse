@@ -17,3 +17,4 @@ public class BaseGenerator<T> implements Generator<T> {
 		return new BaseGenerator<T>(type);
 	}
 }
+
