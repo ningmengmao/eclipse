@@ -1,12 +1,18 @@
-package mypackage.socket;
+package mypackage.udp;
 
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -35,6 +41,8 @@ public class GUIChat extends JFrame {
 	private JTextArea sendArea;
 	private DatagramSocket dgs;
 	private DatagramPacket dgp;
+	private BufferedWriter bfw;
+	
 
 	public GUIChat() {
 		try {
@@ -53,6 +61,7 @@ public class GUIChat extends JFrame {
 		this.setLocation(400, 100);
 		this.setSize(500, 700);
 		dgs = new DatagramSocket();
+		bfw = new BufferedWriter(new FileWriter("src/mypackage/socket/messageLog", true));
 	}
 	private void southPanel() {
 		south = new JPanel();
@@ -87,6 +96,11 @@ public class GUIChat extends JFrame {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				dgs.close();
+				try {
+					bfw.close();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 				System.exit(0);
 			}
 		});
@@ -100,22 +114,68 @@ public class GUIChat extends JFrame {
 				}
 			}
 		});
+		log.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				try {
+					msglog();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		clear.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				receiveArea.setText("");
+			}
+		});
+		shake.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				try {
+					send(new byte[] {-1}, tf.getText());
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		sendArea.addKeyListener(new KeyAdapter() {
+		@Override
+		public void keyReleased(KeyEvent e) {
+			if(e.getKeyCode() == KeyEvent.VK_ENTER && e.isControlDown())
+				try {
+					sendMessage();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+		}
+		});
+	}
+	
+	private void send(byte[] arr, String ip) throws IOException {
+		dgp = new DatagramPacket(
+				arr, arr.length, InetAddress.getByName(ip), 21567);
+		dgs.send(dgp);
 	}
 	
 	private void sendMessage() throws IOException {
 		String msg = sendArea.getText();
 		String ip = tf.getText();
-		dgp = new DatagramPacket(
-				msg.getBytes(), msg.getBytes().length, InetAddress.getByName(ip), 21567);
-		dgs.send(dgp);
+		ip = ip.trim().length() == 0 ? "255.255.255.255" : ip ;
+		send(msg.getBytes(), ip);
 		sendArea.setText("");
-		receiveArea.append(getCurrentTime() + " I say to " + ip +  "\n" + msg + "\n");
+		String msgView = getCurrentTime() + " I say to " + 
+					(ip.equals("255.255.255.255") ? " everyone" : ip ) +  "\n" + msg + "\n\n"  ;
+		bfw.write(msgView);
+		receiveArea.append(msgView);
 	}
 	
 	private String getCurrentTime() {
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 		return sdf.format(new Date());
 	}
+	
 	private class RecvMessage extends Thread{
 		private DatagramSocket recvSocket;
 		@Override
@@ -134,11 +194,44 @@ public class GUIChat extends JFrame {
 				}
 				byte[] arr = recvPackage.getData();
 				int len = recvPackage.getLength();
+				if(arr[0] == -1 && len == 1){
+					shakeWindow();
+					continue;
+				}
 				String msg = new String(arr, 0 ,len);
 				String ip = recvPackage.getAddress().getHostAddress(); 
-				receiveArea.append(getCurrentTime() + " "+ ip + " say to me " + "\n" + msg + "\n");
+				String msgView = getCurrentTime() + " "+ ip + " say to me " + "\n" + msg + "\n\n";
+				try {
+					bfw.write(msgView);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				receiveArea.append(msgView);
 			}	
 		}
+	}
+	private void msglog() throws IOException {
+		bfw.flush();
+		FileInputStream fis = new FileInputStream("src/mypackage/socket/messageLog");
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		byte[] arr = new byte[8192];
+		int len;
+		while((len=fis.read(arr)) != -1)
+			baos.write(arr, 0 ,len);
+		String msg = baos.toString();
+		receiveArea.setText(msg);
+		fis.close();
+	}
+	private void shakeWindow() {
+		int x = this.getX();
+		int y = this.getY();
+		for (int i=0; i<20; i++) {
+			this.setLocation(x-10, y-10);
+			this.setLocation(x-10, y+10);
+			this.setLocation(x+10, y+10);
+			this.setLocation(x+10, y-10);
+			this.setLocation(x, y);
+		}	
 	}
 	public static void main(String[] args) {
 		new GUIChat();
