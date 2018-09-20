@@ -26,4 +26,7 @@ public class Person {
 	public String toString() {
 		return "Person -> name: " + name + " age: " + age ;
 	}
+	public void run() {
+		System.out.println("好好学习，天天向上");
+	}
 }
