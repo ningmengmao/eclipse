@@ -47,6 +47,7 @@ public class UploadServer {
 							while((len = bis.read()) != -1)
 								bw.write(len);
 							System.out.println("接收" + path + "完成");
+							ps.println("接收" + path + "完成");
 							bw.close();
 						}
 					} catch (IOException e) {

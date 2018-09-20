@@ -45,6 +45,7 @@ public class UploadClient {
 			int len;
 			while((len = bis.read(arr)) != -1)
 				ps.write(arr, 0, len);
+			System.out.println(br.readLine());
 			bis.close();
 			sock.close();
 		}
