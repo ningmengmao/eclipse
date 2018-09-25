@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class DeepCopy {
 	/**
-	 * 深度复制数组
+	 * 通过序列化和反序列化, 深度复制数组
 	 * @param src 要复制的数组
 	 * @return 返回src的深克隆
 	 * @throws IOException

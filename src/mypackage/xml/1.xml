@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <person> 
-  <p1> 
+  <p1 id="001"> 
     <name>zhangsan</name>  
-    <school>ecit</school>
+    <school>ecit</school>  
     <age>20</age>  
     <sex>nan</sex> 
   </p1>  
-  <p1> 
+  <p1 id="002"> 
     <name>lisi</name>  
     <age>21</age>  
     <sex>nan</sex> 

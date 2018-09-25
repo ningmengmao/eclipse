@@ -19,7 +19,10 @@ public class Dom4jTest {
 	public static void main(String[] args) throws Exception {
 //		test0();
 //		test1();
-		test2();
+//		test2();
+//		test3();
+//		test4();
+		test5();
 	}
 
 	public static void test0() throws DocumentException {
@@ -63,5 +66,40 @@ public class Dom4jTest {
 				OutputFormat.createPrettyPrint());
 		w.write(doc);
 		w.close();
+	}
+	
+	public static void test3() throws Exception {
+		SAXReader reader = new SAXReader();
+		Document doc = reader.read("src/mypackage/xml/1.xml");
+		Element root = doc.getRootElement();
+		//在第一个P1末尾添加id元素
+		Element p1 = root.element("p1");
+		Element id = p1.addElement("ID");
+		id.setText("001");
+		XMLWriter w = new XMLWriter(new FileOutputStream("src/mypackage/xml/1.xml"), 
+				OutputFormat.createPrettyPrint());
+		w.write(doc);
+		w.close();
+	}
+	public static void test4() throws Exception {
+		SAXReader reader = new SAXReader();
+		Document doc = reader.read("src/mypackage/xml/1.xml");
+		Element root = doc.getRootElement();
+		//在第一个P1末尾输出id元素
+		Element p1 = root.element("p1");
+		Element id = p1.element("ID");
+		p1.remove(id);
+		XMLWriter w = new XMLWriter(new FileOutputStream("src/mypackage/xml/1.xml"), 
+				OutputFormat.createPrettyPrint());
+		w.write(doc);
+		w.close();
+	}
+	public static void test5() throws Exception {
+		SAXReader reader = new SAXReader();
+		Document doc = reader.read("src/mypackage/xml/1.xml");
+		Element root = doc.getRootElement();
+		//获取第一个p1的id属性
+		Element p1 = root.element("p1");
+		System.out.println(	p1.attributeValue("id"));
 	}
 }
