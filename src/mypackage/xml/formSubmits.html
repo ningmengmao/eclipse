@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单提交方式</title>
+</head>
+<body>
+	<form>
+		<input type="text" value="请输入内容" name="input" />
+	</form>
+	<input type="button" onclick="buttonSubmit();" value="提交" />
+	<br/>
+	<a href="#" onclick="buttonSubmit();" >提交</a>
+</body>
+<script type="text/javascript">
+	function buttonSubmit(){
+		var form = document.getElementsByTagName("form")[0];
+		form.action = "recv.html";
+		form.method = "get";
+		form.submit();
+	}
+</script>
+</html>
