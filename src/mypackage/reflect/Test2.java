@@ -12,6 +12,7 @@ public class Test2 {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) throws ClassNotFoundException, IOException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
+		//通过config设置要操作的类
 		BufferedReader br = new BufferedReader(new FileReader("src/mypackage/reflect/config"));
 		Class c = Class.forName(br.readLine());
 		br.close();

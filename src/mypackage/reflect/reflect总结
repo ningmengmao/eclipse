@@ -1,0 +1,14 @@
+ 	1. 获得Class对象 clz
+ 	
+ 	2.1 获取Constructor对象 
+ 		clz.getgetConstructor(Class<?>... argsType) | clz.getConstructors() | getDeclaredConstructors() 
+ 	2.1.1 newInstance(args)建立对象
+ 	
+ 	2.2 获得Method对象
+ 		clz.getMethond(...) | clz.getMethods() | getDeclaredMethods()
+ 	2.2.1 设置权限 
+ 		m.setAccessible(boolean)
+ 	2.2.2 invoke(Object obj, Object...args) 调用方法
+ 	
+ 	2.3 获得Field对象
+ 	

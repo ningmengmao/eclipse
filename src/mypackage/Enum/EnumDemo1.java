@@ -1,7 +1,7 @@
 package mypackage.Enum;
 
 enum Apple1 {
-	Jonathan(10), GoldenDel(9), RedDel, Winesap(15), Cortland(8);
+	Jonathan(10), GoldenDel(9), RedDel, Winesap(15), Cortland(8); //在这里调用构造函数 
 	private int price;
 	Apple1(){
 		price = -1;

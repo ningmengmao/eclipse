@@ -12,7 +12,8 @@ import java.util.List;
  * @author unknown
  *
  */
-public class DeepCopy {
+public final class DeepCopy {
+	private DeepCopy() {}
 	/**
 	 * 通过序列化和反序列化, 深度复制数组
 	 * @param src 要复制的数组

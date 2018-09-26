@@ -12,6 +12,10 @@ public class Person {
 		this.name = name;
 		this.age = age;
 	}
+	public Person(String name) {
+		this.name = name;
+		this.age = -1;
+	}
 	public void eat() {
 		System.out.println(name + "吃了一顿饭");
 	}
